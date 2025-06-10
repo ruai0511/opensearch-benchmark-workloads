@@ -3,12 +3,7 @@
   "nyc_taxis_1",
   "nyc_taxis_2",
   "nyc_taxis_3",
-  "nyc_taxis_4",
-  "nyc_taxis_5",
-  "nyc_taxis_6",
-  "nyc_taxis_7",
-  "nyc_taxis_8",
-  "nyc_taxis_9"
+  "nyc_taxis_4"
 ] %}
 {
       "name": "append-no-conflicts",
@@ -17,7 +12,7 @@
       "schedule": [
         {{ benchmark.collect(parts="../../common_operations/delete_index.json") }},
 
-        {% for i in range(10) %}
+        {% for i in range(5) %}
         {% with default_index_settings={
           "index.codec": "best_compression",
           "index.refresh_interval": "30s",
@@ -106,7 +101,7 @@
       "schedule": [
         {{ benchmark.collect(parts="../../common_operations/delete_index.json") }},
 
-        {% for i in range(10) %}
+        {% for i in range(5) %}
         {% with index_name="nyc_taxis_{{ i }}", default_index_settings={
           "index.codec": "best_compression",
           "index.refresh_interval": "30s",
@@ -139,7 +134,7 @@
       "description": "Indexes the whole document corpus in 10 sorted indices using a setup that leads to higher throughput and better compression.",
       "schedule": [
         {{ benchmark.collect(parts="../../common_operations/delete_index.json") }},
-        {% for i in range(10) %}
+        {% for i in range(5) %}
         {% with default_index_settings={
           "index.codec": "best_compression",
           "index.refresh_interval": "30s",
@@ -171,7 +166,7 @@
       "name": "update",
       "schedule": [
         {{ benchmark.collect(parts="../../common_operations/delete_index.json") }},
-        {% for i in range(10) %}
+        {% for i in range(5) %}
         {% with default_index_settings={
           "index.number_of_shards": number_of_shards | default(1),
           "index.number_of_replicas": number_of_replicas | default(0),
