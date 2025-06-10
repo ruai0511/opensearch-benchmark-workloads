@@ -2,7 +2,8 @@
       "name": "index",
       "operation-type": "bulk",
       "bulk-size": {{bulk_size | default(10000)}},
-      "ingest-percentage": {{ingest_percentage | default(100)}}
+      "ingest-percentage": {{ingest_percentage | default(100)}},
+      "index": "{{index_name}}"
     },
     {
       "name": "update",
@@ -12,7 +13,8 @@
       "conflicts": "{{conflicts | default('random')}}",
       "on-conflict": "{{on_conflict | default('update')}}",
       "conflict-probability": {{conflict_probability | default(25)}},
-      "recency": {{recency | default(0)}}
+      "recency": {{recency | default(0)}},
+      "index": "{{index_name}}"
     },
     {
       "name": "wait-until-merges-finish",
@@ -28,6 +30,7 @@
     {
       "name": "match-all",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "query": {
           "match_all": {}
@@ -37,6 +40,7 @@
     {
       "name": "range",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "query": {
           "range": {
@@ -50,6 +54,7 @@
     },
     {
       "name": "distance_amount_agg",
+      "index": "{{index_name}}",
       "operation-type": "search",
       "body": {
         "size": 0,
@@ -85,6 +90,7 @@
     {
       "name": "autohisto_agg",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -109,6 +115,7 @@
     {
       "name": "date_histogram_agg",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -133,6 +140,7 @@
     {
       "name": "date_histogram_calendar_interval",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -156,6 +164,7 @@
     {
       "name": "date_histogram_calendar_interval_with_tz",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -180,6 +189,7 @@
     {
       "name": "date_histogram_fixed_interval",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -203,6 +213,7 @@
     {
       "name": "date_histogram_fixed_interval_with_tz",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -227,6 +238,7 @@
     {
       "name": "date_histogram_fixed_interval_with_metrics",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -254,6 +266,7 @@
     },
     {
       "name": "auto_date_histogram",
+      "index": "{{index_name}}",
       "operation-type": "search",
       "body": {
         "size": 0,
@@ -278,6 +291,7 @@
     {
       "name": "auto_date_histogram_with_tz",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -302,6 +316,7 @@
     {
       "name": "auto_date_histogram_with_metrics",
       "operation-type": "search",
+      "index": "{{index_name}}",
       "body": {
         "size": 0,
         "query": {
@@ -330,7 +345,7 @@
     {
       "name": "desc_sort_tip_amount",
       "operation-type": "search",
-      "index": "nyc_taxis",
+      "index": "{{index_name}}",
       "body": {
         "query": {
           "match_all": {}
@@ -343,7 +358,7 @@
     {
       "name": "asc_sort_tip_amount",
       "operation-type": "search",
-      "index": "nyc_taxis",
+      "index": "{{index_name}}",
       "body": {
         "query": {
           "match_all": {}
