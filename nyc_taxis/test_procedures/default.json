@@ -35,7 +35,7 @@
           "warmup-time-period": 240,
           "clients": {{bulk_indexing_clients | default(8)}},
           "ignore-response-error-level": "{{error_level | default('non-fatal')}}",
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "name": "refresh-after-index",
@@ -48,7 +48,7 @@
           "iterations": {{ match_all_iterations or iterations | default(100) | tojson }},
           "target-throughput": {{ default_target_throughput or target_throughput | default(3) | tojson }},
           "clients": {{ default_search_clients or search_clients | default(1) }},
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "operation": "range",
@@ -56,7 +56,7 @@
           "iterations": {{ range_iterations or iterations | default(100) | tojson }},
           "target-throughput": {{ range_target_throughput or target_throughput | default(0.7) | tojson }},
           "clients": {{ range_search_clients or search_clients | default(1) }},
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "operation": "distance_amount_agg",
@@ -64,7 +64,7 @@
           "iterations": {{ distance_amount_agg_iterations or iterations | default(50) | tojson }},
           "target-throughput": {{ distance_amount_agg_target_throughput or target_throughput | default(2) | tojson }},
           "clients": {{ distance_amount_agg_search_clients or search_clients | default(1) }},
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "operation": "autohisto_agg",
@@ -72,7 +72,7 @@
           "iterations": {{ autohisto_agg_iterations or iterations | default(100) | tojson }},
           "target-throughput": {{ autohisto_agg_target_throughput or target_throughput | default(1.5) | tojson }},
           "clients": {{ autohisto_agg_search_clients or search_clients | default(1) }},
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "operation": "date_histogram_agg",
@@ -80,7 +80,7 @@
           "iterations": {{ date_histogram_agg_iterations or iterations | default(100) | tojson }},
           "target-throughput": {{ date_histogram_agg_target_throughput or target_throughput | default(1.5) | tojson }},
           "clients": {{ date_histogram_agg_search_clients or search_clients | default(1) }},
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "operation": "desc_sort_tip_amount",
@@ -88,7 +88,7 @@
           "iterations": {{ desc_sort_tip_amount_iterations or iterations | default(100) | tojson }},
           "target-throughput": {{ desc_sort_tip_amount_target_throughput or target_throughput | default(0.5) | tojson }},
           "clients": {{ desc_sort_tip_amount_search_clients or search_clients | default(1) }},
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "operation": "asc_sort_tip_amount",
@@ -96,7 +96,7 @@
           "iterations": {{ asc_sort_tip_amount_iterations or iterations | default(100) | tojson }},
           "target-throughput": {{ asc_sort_tip_amount_target_throughput or target_throughput | default(0.5) | tojson }},
           "clients": {{ asc_sort_tip_amount_search_clients or search_clients | default(1) }},
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         }
       ]
     },
@@ -125,7 +125,7 @@
           "warmup-time-period": 240,
           "clients": {{bulk_indexing_clients | default(8)}},
           "ignore-response-error-level": "{{error_level | default('non-fatal')}}",
-          "index": "{{nyc_index_names}}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "name": "refresh-after-index",
@@ -158,7 +158,7 @@
           "warmup-time-period": 240,
           "clients": {{ bulk_indexing_clients | default(8) }},
           "ignore-response-error-level": "{{ error_level | default('non-fatal') }}",
-          "index": "{{ nyc_index_names }}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "name": "refresh-after-index",
@@ -188,7 +188,7 @@
           "warmup-time-period": 1200,
           "clients": {{ bulk_indexing_clients | default(8) }},
           "ignore-response-error-level": "{{ error_level | default('non-fatal') }}",
-          "index": "{{ nyc_index_names }}"
+          "index": {{ nyc_index_names | tojson }}
         },
         {
           "name": "refresh-after-index",
