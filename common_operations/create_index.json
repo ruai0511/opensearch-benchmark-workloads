@@ -1,6 +1,7 @@
 {
     "name": "{{ name | default('create-index') }}",
     "operation": {
+        "name": "{{ name | default('create-index') }}",
         "operation-type": "create-index",
         "settings": {{index_settings | default(default_index_settings | default({})) | tojson}}
     }
