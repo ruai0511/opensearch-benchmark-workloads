@@ -23,7 +23,8 @@
           "index.refresh_interval": "30s",
           "index.translog.flush_threshold_size": "4g"
         }, index_name="nyc_taxis_{{i}}" %}
-        {{ benchmark.collect(parts="../../common_operations/create_index_{{i}}.json")}}
+        {{ benchmark.collect(parts="../../common_operations/create_index_" ~ i ~ ".json") }}
+        {% if not loop.last %},{% endif %}
         {% endwith %}
         {% endfor %}
 
@@ -112,7 +113,8 @@
           "index.refresh_interval": "30s",
           "index.translog.flush_threshold_size": "4g"
         } %}
-        {{ benchmark.collect(parts="../../common_operations/create_index_{{i}}.json") }},
+        {{ benchmark.collect(parts="../../common_operations/create_index_" ~ i ~ ".json") }}
+        {% if not loop.last %},{% endif %}
         {% endwith %}
         {% endfor %}
 
@@ -147,7 +149,8 @@
           "index.sort.field": "pickup_datetime",
           "index.sort.order": "desc"
         }, index_name="nyc_taxis_{{ i }}" %}
-        {{ benchmark.collect(parts="../../common_operations/create_index_{{i}}.json") }},
+        {{ benchmark.collect(parts="../../common_operations/create_index_" ~ i ~ ".json") }}
+        {% if not loop.last %},{% endif %}
         {% endwith %}
         {% endfor %}
         {% with default_index_settings={}, index_name="nyc_taxis_0" %}
@@ -177,7 +180,8 @@
           "index.number_of_replicas": number_of_replicas | default(0),
           "index.store.type": store_type | default('fs')
         }, index_name="nyc_taxis_{{ i }}" %}
-        {{ benchmark.collect(parts="../../common_operations/create_index_{{i}}.json") }},
+        {{ benchmark.collect(parts="../../common_operations/create_index_" ~ i ~ ".json") }}
+        {% if not loop.last %},{% endif %}
         {% endwith %}
         {% endfor %}
         {% with default_index_settings={}, index_name="nyc_taxis_0" %}
