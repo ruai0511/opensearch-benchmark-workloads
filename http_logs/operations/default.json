@@ -49,37 +49,159 @@
       "corpora": "http_logs"
     },
     {
-      "name": "match-all",
+      "name": "match-all-181998",
       "operation-type": "search",
-      "index": "logs-*",
+      "index": "logs-181998",
       "body": {
-        "query": {
-          "match_all": {}
-        }
+        "query": { "match_all": {} }
       }
     },
     {
-      "name": "term",
+      "name": "match-all-191998",
       "operation-type": "search",
-      "index": "logs-*",
-      "request-timeout": 7200,
+      "index": "logs-191998",
       "body": {
-        "query": {
-          "term": {
-              "request.raw": {
-                "value": "GET / HTTP/1.0"
-              }
-          }
-        }
-      },
-      "detailed-results": true,
-      "assertions": [
-        {
-          "property": "hits",
-          "condition": "==",
-          "value": 10000
-        }
-      ]
+        "query": { "match_all": {} }
+      }
+    },
+    {
+      "name": "match-all-201998",
+      "operation-type": "search",
+      "index": "logs-201998",
+      "body": {
+        "query": { "match_all": {} }
+      }
+    },
+    {
+      "name": "match-all-231998",
+      "operation-type": "search",
+      "index": "logs-231998",
+      "body": {
+        "query": { "match_all": {} }
+      }
+    },
+    {
+      "name": "match-all-241998",
+      "operation-type": "search",
+      "index": "logs-241998",
+      "body": {
+        "query": { "match_all": {} }
+      }
+    },
+    {
+    "name": "term-logs-181998",
+    "operation-type": "search",
+    "index": "logs-181998",
+    "request-timeout": 7200,
+    "body": {
+    "query": {
+    "term": {
+    "request.raw": {
+    "value": "GET / HTTP/1.0"
+    }
+    }
+    }
+    },
+    "detailed-results": true,
+    "assertions": [
+    {
+    "property": "hits",
+    "condition": "==",
+    "value": 10000
+    }
+    ]
+    },
+    {
+    "name": "term-logs-191998",
+    "operation-type": "search",
+    "index": "logs-191998",
+    "request-timeout": 7200,
+    "body": {
+    "query": {
+    "term": {
+    "request.raw": {
+    "value": "GET / HTTP/1.0"
+    }
+    }
+    }
+    },
+    "detailed-results": true,
+    "assertions": [
+    {
+    "property": "hits",
+    "condition": "==",
+    "value": 10000
+    }
+    ]
+    },
+    {
+    "name": "term-logs-201998",
+    "operation-type": "search",
+    "index": "logs-201998",
+    "request-timeout": 7200,
+    "body": {
+    "query": {
+    "term": {
+    "request.raw": {
+    "value": "GET / HTTP/1.0"
+    }
+    }
+    }
+    },
+    "detailed-results": true,
+    "assertions": [
+    {
+    "property": "hits",
+    "condition": "==",
+    "value": 10000
+    }
+    ]
+    },
+    {
+    "name": "term-logs-241998",
+    "operation-type": "search",
+    "index": "logs-241998",
+    "request-timeout": 7200,
+    "body": {
+    "query": {
+    "term": {
+    "request.raw": {
+    "value": "GET / HTTP/1.0"
+    }
+    }
+    }
+    },
+    "detailed-results": true,
+    "assertions": [
+    {
+    "property": "hits",
+    "condition": "==",
+    "value": 10000
+    }
+    ]
+    },
+    {
+    "name": "term-logs-231998",
+    "operation-type": "search",
+    "index": "logs-231998",
+    "request-timeout": 7200,
+    "body": {
+    "query": {
+    "term": {
+    "request.raw": {
+    "value": "GET / HTTP/1.0"
+    }
+    }
+    }
+    },
+    "detailed-results": true,
+    "assertions": [
+    {
+    "property": "hits",
+    "condition": "==",
+    "value": 10000
+    }
+    ]
     },
     {
       "name": "multi-term-filter",
@@ -509,7 +631,7 @@
           }
         ]
       }
-    },    
+    },
     {
       "name": "create-http-log-100-dummy-scripting-search-pipeline",
       "operation-type": "create-search-pipeline",
@@ -525,7 +647,7 @@
           }
         ]
       }
-    },      
+    },
     {
       "name": "create-http-log-all-processors-search-pipeline",
       "operation-type": "create-search-pipeline",
