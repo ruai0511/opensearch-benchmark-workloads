@@ -7,106 +7,64 @@
         {{ benchmark.collect(parts="../../common_operations/workload_setup.json") }},
         {% endwith %}
         {
-          "name": "match-all-parallel",
-          "operation": "parallel",
-          "operations": [
-            {
-              "name": "match-all-logs-181998",
-              "operation": "match-all",
-              "index": "logs-181998",
-              "warmup-iterations": {{ match_all_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ match_all_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ default_target_throughput or target_throughput | default(8) | tojson }},
-            "clients": {{ default_search_clients or search_clients | default(1) }}
-          },
-            {
-              "name": "match-all-logs-191998",
-              "operation": "match-all",
-              "index": "logs-191998",
-              "warmup-iterations": {{ match_all_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ match_all_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ default_target_throughput or target_throughput | default(8) | tojson }},
-            "clients": {{ default_search_clients or search_clients | default(1) }}
-          },
-            {
-              "name": "match-all-logs-201998",
-              "operation": "match-all",
-              "index": "logs-201998",
-              "warmup-iterations": {{ match_all_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ match_all_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ default_target_throughput or target_throughput | default(8) | tojson }},
-            "clients": {{ default_search_clients or search_clients | default(1) }}
-          },
-            {
-              "name": "match-all-logs-231998",
-              "operation": "match-all",
-              "index": "logs-231998",
-              "warmup-iterations": {{ match_all_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ match_all_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ default_target_throughput or target_throughput | default(8) | tojson }},
-            "clients": {{ default_search_clients or search_clients | default(1) }}
-          },
-            {
-              "name": "match-all-logs-241998",
-              "operation": "match-all",
-              "index": "logs-241998",
-              "warmup-iterations": {{ match_all_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ match_all_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ default_target_throughput or target_throughput | default(8) | tojson }},
-            "clients": {{ default_search_clients or search_clients | default(1) }}
-          }
-          ]
+          "name": "match-all-181998",
+          "operation": "match-all",
+          "index": "logs-181998",
+          "clients": 1
         },
         {
-          "name": "term-parallel",
-          "operation": "parallel",
-          "operations": [
-            {
-              "name": "term-logs-181998",
-              "operation": "term",
-              "index": "logs-181998",
-              "warmup-iterations": {{ term_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ term_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ term_target_throughput or target_throughput | default(50) | tojson }},
-            "clients": {{ term_search_clients or search_clients | default(1) }}
-          },
-            {
-              "name": "term-logs-191998",
-              "operation": "term",
-              "index": "logs-191998",
-              "warmup-iterations": {{ term_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ term_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ term_target_throughput or target_throughput | default(50) | tojson }},
-            "clients": {{ term_search_clients or search_clients | default(1) }}
-          },
-            {
-              "name": "term-logs-201998",
-              "operation": "term",
-              "index": "logs-201998",
-              "warmup-iterations": {{ term_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ term_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ term_target_throughput or target_throughput | default(50) | tojson }},
-            "clients": {{ term_search_clients or search_clients | default(1) }}
-          },
-            {
-              "name": "term-logs-231998",
-              "operation": "term",
-              "index": "logs-231998",
-              "warmup-iterations": {{ term_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ term_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ term_target_throughput or target_throughput | default(50) | tojson }},
-            "clients": {{ term_search_clients or search_clients | default(1) }}
-          },
-            {
-              "name": "term-logs-241998",
-              "operation": "term",
-              "index": "logs-241998",
-              "warmup-iterations": {{ term_warmup_iterations or warmup_iterations | default(500) | tojson }},
-            "iterations": {{ term_iterations or iterations | default(100) | tojson }},
-            "target-throughput": {{ term_target_throughput or target_throughput | default(50) | tojson }},
-            "clients": {{ term_search_clients or search_clients | default(1) }}
-          }
-          ]
+          "name": "match-all-191998",
+          "operation": "match-all",
+          "index": "logs-191998",
+          "clients": 1
+        },
+        {
+          "name": "match-all-201998",
+          "operation": "match-all",
+          "index": "logs-201998",
+          "clients": 1
+        },
+        {
+          "name": "match-all-231998",
+          "operation": "match-all",
+          "index": "logs-231998",
+          "clients": 1
+        },
+        {
+          "name": "match-all-241998",
+          "operation": "match-all",
+          "index": "logs-241998",
+          "clients": 1
+        },
+        {
+          "name": "term-181998",
+          "operation": "term",
+          "index": "logs-181998",
+          "clients": 1
+        },
+        {
+          "name": "term-191998",
+          "operation": "term",
+          "index": "logs-191998",
+          "clients": 1
+        },
+        {
+          "name": "term-201998",
+          "operation": "term",
+          "index": "logs-201998",
+          "clients": 1
+        },
+        {
+          "name": "term-231998",
+          "operation": "term",
+          "index": "logs-231998",
+          "clients": 1
+        },
+        {
+          "name": "term-241998",
+          "operation": "term",
+          "index": "logs-241998",
+          "clients": 1
         },
         {
           "operation": "range",
