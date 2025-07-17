@@ -49,7 +49,7 @@
       "corpora": "http_logs"
     },
     {
-      "name": "match-all-181998",
+      "name": "match-all-logs-181998",
       "operation-type": "search",
       "index": "logs-181998",
       "body": {
@@ -57,7 +57,7 @@
       }
     },
     {
-      "name": "match-all-191998",
+      "name": "match-all-logs-191998",
       "operation-type": "search",
       "index": "logs-191998",
       "body": {
@@ -65,7 +65,7 @@
       }
     },
     {
-      "name": "match-all-201998",
+      "name": "match-all-logs-201998",
       "operation-type": "search",
       "index": "logs-201998",
       "body": {
@@ -73,7 +73,7 @@
       }
     },
     {
-      "name": "match-all-231998",
+      "name": "match-all-logs-231998",
       "operation-type": "search",
       "index": "logs-231998",
       "body": {
@@ -81,7 +81,7 @@
       }
     },
     {
-      "name": "match-all-241998",
+      "name": "match-all-logs-241998",
       "operation-type": "search",
       "index": "logs-241998",
       "body": {
