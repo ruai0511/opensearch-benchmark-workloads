@@ -297,9 +297,9 @@
       ]
     },
     {
-      "name": "400s-in-range",
+      "name": "400s-in-range-logs-181998",
       "operation-type": "search",
-      "index": "logs-*",
+      "index": "logs-181998",
       "body": {
         "query": {
           "bool": {
@@ -321,6 +321,56 @@
           }
         }
       },
+          {
+          "name": "400s-in-range-logs-191998",
+          "operation-type": "search",
+          "index": "logs-191998",
+          "body": {
+          "query": {
+          "bool": {
+          "must": [
+          {
+          "range": {
+          "@timestamp": {
+          "gte": "1998-05-01T00:00:00Z",
+          "lt": "1998-05-02T00:00:00Z"
+          }
+          }
+          },
+          {
+          "match": {
+          "status": "400"
+          }
+          }
+          ]
+          }
+          }
+          },
+          {
+          "name": "400s-in-range-logs-241998",
+          "operation-type": "search",
+    "index": "logs-241998",
+    "body": {
+    "query": {
+    "bool": {
+    "must": [
+    {
+    "range": {
+    "@timestamp": {
+    "gte": "1998-05-01T00:00:00Z",
+    "lt": "1998-05-02T00:00:00Z"
+    }
+    }
+    },
+    {
+    "match": {
+    "status": "400"
+    }
+    }
+    ]
+    }
+    }
+    },
       "detailed-results": true,
       "assertions": [
         {

@@ -112,13 +112,29 @@
           "clients": {{ status_200s_in_range_search_clients or search_clients | default(1) }}
         },
         {
-          "name": "status-400s-in-range",
-          "operation": "400s-in-range",
+          "name": "status-400s-in-range-logs-181998",
+          "operation": "400s-in-range-logs-181998",
           "warmup-iterations": {{ status_400s_in_range_warmup_iterations or warmup_iterations | default(500) | tojson }},
           "iterations": {{ status_400s_in_range_iterations or iterations | default(100) | tojson }},
-          "target-throughput": {{ status_400s_in_range_target_throughput or target_throughput | default(50) | tojson }},
-          "clients": {{ status_400s_in_range_search_clients or search_clients | default(1) }}
+          "target-throughput": {{ status_400s_in_range_target_throughput or target_throughput | default(100) | tojson }},
+          "clients": {{ status_400s_in_range_search_clients or search_clients | default(20) }}
         },
+        {
+          "name": "status-400s-in-range-logs-191998",
+          "operation": "400s-in-range-logs-191998",
+          "warmup-iterations": {{ status_400s_in_range_warmup_iterations or warmup_iterations | default(500) | tojson }},
+        "iterations": {{ status_400s_in_range_iterations or iterations | default(100) | tojson }},
+        "target-throughput": {{ status_400s_in_range_target_throughput or target_throughput | default(100) | tojson }},
+        "clients": {{ status_400s_in_range_search_clients or search_clients | default(20) }}
+      },
+        {
+          "name": "status-400s-in-range-logs-241998",
+          "operation": "400s-in-range-logs-241998",
+          "warmup-iterations": {{ status_400s_in_range_warmup_iterations or warmup_iterations | default(500) | tojson }},
+        "iterations": {{ status_400s_in_range_iterations or iterations | default(100) | tojson }},
+        "target-throughput": {{ status_400s_in_range_target_throughput or target_throughput | default(100) | tojson }},
+        "clients": {{ status_400s_in_range_search_clients or search_clients | default(20) }}
+      },
         {
           "operation": "hourly_agg",
           "warmup-iterations": {{ hourly_agg_warmup_iterations or warmup_iterations | default(50) | tojson }},
