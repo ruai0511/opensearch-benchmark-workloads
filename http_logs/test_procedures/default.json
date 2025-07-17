@@ -7,62 +7,62 @@
         {{ benchmark.collect(parts="../../common_operations/workload_setup.json") }},
         {% endwith %}
         {
-          "name": "match-all-181998",
-          "operation": "match-all",
+          "name": "match-all-logs-181998",
+          "operation": "match-all-logs-181998",
           "index": "logs-181998",
           "clients": 1
         },
         {
-          "name": "match-all-191998",
-          "operation": "match-all",
+          "name": "match-all-logs-191998",
+          "operation": "match-all-logs-191998",
           "index": "logs-191998",
           "clients": 1
         },
         {
-          "name": "match-all-201998",
-          "operation": "match-all",
+          "name": "match-all-logs-201998",
+          "operation": "match-all-logs-201998",
           "index": "logs-201998",
           "clients": 1
         },
         {
-          "name": "match-all-231998",
-          "operation": "match-all",
+          "name": "match-all-logs-231998",
+          "operation": "match-all-logs-231998",
           "index": "logs-231998",
           "clients": 1
         },
         {
-          "name": "match-all-241998",
-          "operation": "match-all",
+          "name": "match-all-logs-241998",
+          "operation": "match-all-logs-241998",
           "index": "logs-241998",
           "clients": 1
         },
         {
-          "name": "term-181998",
-          "operation": "term",
+          "name": "term-logs-181998",
+          "operation": "term-logs-181998",
           "index": "logs-181998",
           "clients": 1
         },
         {
-          "name": "term-191998",
-          "operation": "term",
+          "name": "term-logs-191998",
+          "operation": "term-logs-191998",
           "index": "logs-191998",
           "clients": 1
         },
         {
-          "name": "term-201998",
-          "operation": "term",
+          "name": "term-logs-201998",
+          "operation": "term-logs-201998",
           "index": "logs-201998",
           "clients": 1
         },
         {
-          "name": "term-231998",
-          "operation": "term",
+          "name": "term-logs-231998",
+          "operation": "term-logs-231998",
           "index": "logs-231998",
           "clients": 1
         },
         {
-          "name": "term-241998",
-          "operation": "term",
+          "name": "term-logs-241998",
+          "operation": "term-logs-241998",
           "index": "logs-241998",
           "clients": 1
         },
